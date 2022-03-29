@@ -103,12 +103,8 @@ public class ContactPage {
 
     public void inputDataToMandatoryFields(String fieldName) throws NoSuchElementException{
         switch (fieldName) {
-            case Constant.MSG_FIELD -> {
-                messageTextField.sendKeys(StringUtility.generator(20));
-            }
-            case Constant.EMAIL_FIELD -> {
-                emailTextField.sendKeys(StringUtility.emailGenerator(7));
-            }
+            case Constant.MSG_FIELD -> messageTextField.sendKeys(StringUtility.generator(20));
+            case Constant.EMAIL_FIELD -> emailTextField.sendKeys(StringUtility.emailGenerator(7));
             case Constant.FORENAME_FIELD -> {
                 name = StringUtility.generator(10);
                 forNameTextField.sendKeys(name);
@@ -118,15 +114,9 @@ public class ContactPage {
     }
 
     public void checkErrMsgVisibility(){
-        assertThatExceptionOfType(NoSuchElementException.class).isThrownBy(()->{
-            messageErr.isDisplayed();
-        });
-        assertThatExceptionOfType(NoSuchElementException.class).isThrownBy(()->{
-            emailErr.isDisplayed();
-        });
-        assertThatExceptionOfType(NoSuchElementException.class).isThrownBy(()->{
-            forNameErr.isDisplayed();
-        });
+        assertThatExceptionOfType(NoSuchElementException.class).isThrownBy(()-> messageErr.isDisplayed());
+        assertThatExceptionOfType(NoSuchElementException.class).isThrownBy(()-> emailErr.isDisplayed());
+        assertThatExceptionOfType(NoSuchElementException.class).isThrownBy(()-> forNameErr.isDisplayed());
     }
 
     public void checkBackgroundForTextBox(){

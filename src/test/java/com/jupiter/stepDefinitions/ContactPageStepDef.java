@@ -15,13 +15,13 @@ public class ContactPageStepDef {
     }
 
     @When("navigate to contact page from home page")
-    public void navigateToContactPageFromHomePage() throws InterruptedException {
+    public void navigateToContactPageFromHomePage() {
         contactPage.navigateToContactPage();
     }
 
 
     @When("the user clicks on submit button")
-    public void theUserClicksOnSubmitButton() throws InterruptedException {
+    public void theUserClicksOnSubmitButton() {
         contactPage.clickOnSubmitButton();
     }
 

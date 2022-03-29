@@ -114,9 +114,7 @@ public class ShopPage {
     }
 
     public void clickCartButton(){
-        assertThatNoException().isThrownBy(() -> {
-            cartButton.isDisplayed();
-        });
+        assertThatNoException().isThrownBy(() -> cartButton.isDisplayed());
 
         cartButton.click();
         localDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
@@ -124,35 +122,23 @@ public class ShopPage {
 
     public void eachItem(String productDetail){
         switch (productDetail){
-            case Constant.BEAR_ITEM -> {
-                assertThat(totalItems.get(Constant.BEAR_ITEM)).isEqualTo(Integer
-                        .parseInt(numberOfItemsForBear.getAttribute("value")));
-            }
-            case Constant.BUNNY_ITEM -> {
-                assertThat(totalItems.get(Constant.BUNNY_ITEM)).isEqualTo(Integer
-                        .parseInt(numberOfItemsForBunny.getAttribute("value")));
-            }
-            case Constant.FROG_ITEM -> {
-                assertThat(totalItems.get(Constant.FROG_ITEM)).isEqualTo(Integer
-                        .parseInt(numberOfItemsForFrog.getAttribute("value")));
-            }
+            case Constant.BEAR_ITEM -> assertThat(totalItems.get(Constant.BEAR_ITEM)).isEqualTo(Integer
+                    .parseInt(numberOfItemsForBear.getAttribute("value")));
+            case Constant.BUNNY_ITEM -> assertThat(totalItems.get(Constant.BUNNY_ITEM)).isEqualTo(Integer
+                    .parseInt(numberOfItemsForBunny.getAttribute("value")));
+            case Constant.FROG_ITEM -> assertThat(totalItems.get(Constant.FROG_ITEM)).isEqualTo(Integer
+                    .parseInt(numberOfItemsForFrog.getAttribute("value")));
         }
     }
 
     public void checkPriceOfEachItem(String productDetail){
         switch (productDetail){
-            case Constant.BEAR_ITEM -> {
-                assertThat(eachPriceOfTheItem.get(Constant.BEAR_ITEM)).isEqualTo(
-                        eachBearPriceOnCart.getText());
-            }
-            case Constant.BUNNY_ITEM -> {
-                assertThat(eachPriceOfTheItem.get(Constant.BUNNY_ITEM)).isEqualTo(
-                        eachBunnyPriceOnCart.getText());
-            }
-            case Constant.FROG_ITEM -> {
-                assertThat(eachPriceOfTheItem.get(Constant.FROG_ITEM)).isEqualTo(
-                        eachFrogPriceOnCart.getText());
-            }
+            case Constant.BEAR_ITEM -> assertThat(eachPriceOfTheItem.get(Constant.BEAR_ITEM)).isEqualTo(
+                    eachBearPriceOnCart.getText());
+            case Constant.BUNNY_ITEM -> assertThat(eachPriceOfTheItem.get(Constant.BUNNY_ITEM)).isEqualTo(
+                    eachBunnyPriceOnCart.getText());
+            case Constant.FROG_ITEM -> assertThat(eachPriceOfTheItem.get(Constant.FROG_ITEM)).isEqualTo(
+                    eachFrogPriceOnCart.getText());
         }
     }
 
