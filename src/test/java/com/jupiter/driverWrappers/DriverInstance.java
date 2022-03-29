@@ -1,6 +1,5 @@
 package com.jupiter.driverWrappers;
 
-import com.jupiter.Constants.Constant;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
